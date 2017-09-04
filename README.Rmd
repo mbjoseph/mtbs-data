@@ -99,7 +99,7 @@ dplyr::tbl_df(d)[1:5, ]
 ### Computing polygon centroids and distance matrices
 
 
-```{r, message = FALSE}
+```{r, message = FALSE, results='hide'}
 library(rgdal)
 library(rgeos)
 

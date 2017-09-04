@@ -129,7 +129,8 @@ event_d <- event_d %>%
   rename(day = fire_day, 
          acres_burned = p_acres) %>%
   select(fire_id, year, month, day, lat, long, acres_burned, starts_with('na'), 
-         mean_potential_et, total_precip, max_air_temp, mean_wind_speed)
+         yearmonth, mean_potential_et, total_precip, max_air_temp, 
+         mean_wind_speed)
 
 summary_d <- summary_d %>%
   left_join(climate_data)

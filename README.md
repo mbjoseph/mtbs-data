@@ -49,13 +49,13 @@ The script will produce a directory with the following structure:
 
 The file `fire-events.csv` has the raw data from MTBS where each row is a fire event:
 
-| fire\_id              |  year|  month|  day|     lat|     long|  acres\_burned| na\_l3name             | na\_l2name                                            | na\_l1name                |  mean\_potential\_et|  total\_precip|  max\_air\_temp|  mean\_wind\_speed|
-|:----------------------|-----:|------:|----:|-------:|--------:|--------------:|:-----------------------|:------------------------------------------------------|:--------------------------|--------------------:|--------------:|---------------:|------------------:|
-| AL3038308812219980404 |  1998|      4|    4|  30.383|  -88.122|            705| Southern Coastal Plain | MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS | EASTERN TEMPERATE FORESTS |             4.757972|       50.62457|        299.6400|           4.281175|
-| AL3041008830120050916 |  2005|      9|   16|  30.410|  -88.301|           2914| Southern Coastal Plain | MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS | EASTERN TEMPERATE FORESTS |             4.952767|       90.42460|        305.1668|           3.975596|
-| AL3067208833720050207 |  2005|      2|    7|  30.672|  -88.337|            696| Southeastern Plains    | SOUTHEASTERN USA PLAINS                               | EASTERN TEMPERATE FORESTS |             2.275852|      110.09175|        289.2758|           4.016748|
-| AL3105208777220050211 |  2005|      2|   11|  31.052|  -87.772|           7334| Southeastern Plains    | SOUTHEASTERN USA PLAINS                               | EASTERN TEMPERATE FORESTS |             2.275852|      110.09175|        289.2758|           4.016748|
-| AL3110108837320050218 |  2005|      2|   18|  31.101|  -88.373|            757| Southeastern Plains    | SOUTHEASTERN USA PLAINS                               | EASTERN TEMPERATE FORESTS |             2.275852|      110.09175|        289.2758|           4.016748|
+| fire\_id              |  year|  month|  day|     lat|     long|  acres\_burned| na\_l3name             | na\_l2name                                            | na\_l1name                | yearmonth |  mean\_potential\_et|  total\_precip|  max\_air\_temp|  mean\_wind\_speed|
+|:----------------------|-----:|------:|----:|-------:|--------:|--------------:|:-----------------------|:------------------------------------------------------|:--------------------------|:----------|--------------------:|--------------:|---------------:|------------------:|
+| AL3038308812219980404 |  1998|      4|    4|  30.383|  -88.122|            705| Southern Coastal Plain | MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS | EASTERN TEMPERATE FORESTS | 1998-04   |             4.757972|       50.62457|        299.6400|           4.281175|
+| AL3041008830120050916 |  2005|      9|   16|  30.410|  -88.301|           2914| Southern Coastal Plain | MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS | EASTERN TEMPERATE FORESTS | 2005-09   |             4.952767|       90.42460|        305.1668|           3.975596|
+| AL3067208833720050207 |  2005|      2|    7|  30.672|  -88.337|            696| Southeastern Plains    | SOUTHEASTERN USA PLAINS                               | EASTERN TEMPERATE FORESTS | 2005-02   |             2.275852|      110.09175|        289.2758|           4.016748|
+| AL3105208777220050211 |  2005|      2|   11|  31.052|  -87.772|           7334| Southeastern Plains    | SOUTHEASTERN USA PLAINS                               | EASTERN TEMPERATE FORESTS | 2005-02   |             2.275852|      110.09175|        289.2758|           4.016748|
+| AL3110108837320050218 |  2005|      2|   18|  31.101|  -88.373|            757| Southeastern Plains    | SOUTHEASTERN USA PLAINS                               | EASTERN TEMPERATE FORESTS | 2005-02   |             2.275852|      110.09175|        289.2758|           4.016748|
 
 The columns are as follows:
 
@@ -92,11 +92,6 @@ ecoregion_file <- list.files(pattern = 'us_eco_l3.shp$',
                              full.names = TRUE)
 ecoregions <- readOGR(ecoregion_file)
 ```
-
-    ## OGR data source with driver: ESRI Shapefile 
-    ## Source: "./data/raw/us_eco_l3/us_eco_l3.shp", layer: "us_eco_l3"
-    ## with 1250 features
-    ## It has 13 fields
 
 #### Computing centroids
 
